@@ -49,14 +49,19 @@
             window.location.href = androidStore;
           }, 2000);
         } else if (isIOS) {
-          const button = document.getElementById("tapToOpen");
-          button.style.display = "inline-block";
-          button.onclick = () => {
-            window.location.href = iosApp;
-            setTimeout(() => {
-              window.location.href = iosStore;
-            }, 3000);
-          };
+
+          window.location.href = iosApp;
+          setTimeout(() => {
+            window.location.href = iosStore;
+          }, 3000);
+          // const button = document.getElementById("tapToOpen");
+          // button.style.display = "inline-block";
+          // button.onclick = () => {
+          //   window.location.href = iosApp;
+          //   setTimeout(() => {
+          //     window.location.href = iosStore;
+          //   }, 3000);
+          // };
 
           // if (isSafari) {
           //   window.location.href = iosApp;
