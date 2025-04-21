@@ -4,8 +4,6 @@
     <title>Opening App...</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Apple Smart App Banner -->
-    <!-- <meta name="apple-itunes-app" content="app-id=1575323645, app-argument=https://www.zeptonow.com" /> -->
     <meta name="apple-itunes-app" content="app-id=960335206, app-argument=https://blinkit.com" />
     <style>
       body {
@@ -14,7 +12,7 @@
         padding: 2em;
       }
       #tapToOpen {
-        /* display: none; */
+        display: none;
         padding: 1em 2em;
         font-size: 18px;
         background: #007aff;
@@ -26,11 +24,9 @@
     </style>
   </head>
   <body>
-    <!-- <h2>Redirecting to Let's Try ...</h2> -->
-    <!-- <p>If nothing happens, tap the button below.</p> -->
-    <button id="tapToOpen" >Open Blinkit</button>
-    <!-- <button id="tapToOpen">Open Zepto</button> -->
-
+    <h2>Redirecting to Blinkit App...</h2>
+    <p>If nothing happens, tap the button below.</p>
+    <button id="tapToOpen">Open Blinkit</button>
 
     <script>
       const userAgent = navigator.userAgent.toLowerCase();
@@ -38,47 +34,34 @@
       const isIOS = /iphone|ipad|ipod/.test(userAgent);
       const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-      const androidIntent = "intent://grofers.com/#Intent;package=com.grofers.customerapp;scheme=https;end";
-    // const androidIntent = "intent://zeptonow.com/#Intent;package=com.zeptoconsumerapp;scheme=https;end";
-    // const androidIntent = "intent://home#Intent;scheme=zeptonow;package=com.zeptoconsumerapp;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.zeptoconsumerapp;end";
-
+      const androidIntent = "intent://grofers.com/#Intent;scheme=https;package=com.grofers.customerapp;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.grofers.customerapp;end";
       const androidStore = "https://play.google.com/store/apps/details?id=com.grofers.customerapp";
-    //   const androidStore = "https://play.google.com/store/apps/details?id=com.zeptoconsumerapp";
 
-      const iosApp = "blinkit://home"; // scheme (won’t work in Chrome)
-    //   const iosApp = "zepto://home"; // scheme (won’t work in Chrome)
+      const iosApp = "blinkit://home";
       const iosStore = "https://apps.apple.com/in/app/blinkit-grocery-in-10-minutes/id960335206";
-    //   const iosStore = "https://apps.apple.com/in/app/zepto-10-min-grocery-delivery/id1575323645";
+
       const webFallback = "https://www.letstryfoods.com";
 
       window.onload = () => {
         if (isAndroid) {
           window.location.href = androidIntent;
-          // window.location.href = webFallback;
           setTimeout(() => {
             window.location.href = androidStore;
-            // window.location.href = webFallback;
           }, 2000);
         } else if (isIOS) {
-          // window.location.href = webFallback;
-          Show button — required for Chrome/3rd party browsers
-          document.getElementById("tapToOpen").style.display = "inline-block";
-          document.getElementById("tapToOpen").onclick = () => {
+          const button = document.getElementById("tapToOpen");
+          button.style.display = "inline-block";
+          button.onclick = () => {
             window.location.href = iosApp;
-            // window.location.href = webFallback;
             setTimeout(() => {
               window.location.href = iosStore;
-              // window.location.href = webFallback;
             }, 3000);
           };
 
-          // Auto open only in Safari
           if (isSafari) {
-            window.location = iosApp;
-            // window.location.href = webFallback;
+            window.location.href = iosApp;
             setTimeout(() => {
               window.location.href = iosStore;
-             // window.location.href = webFallback;
             }, 2000);
           }
         } else {
