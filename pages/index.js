@@ -6,7 +6,7 @@ export default function Home() {
   const [qr, setQr] = useState('');
 
   useEffect(() => {
-    QRCode.toDataURL('https://your-vercel-deployment.vercel.app/letstry')
+    QRCode.toDataURL('https://qr-code-lime-one.vercel.app/letstry')
       .then(setQr)
       .catch(console.error);
   }, []);
