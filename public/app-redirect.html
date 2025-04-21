@@ -28,7 +28,7 @@
   <body>
     <!-- <h2>Redirecting to Let's Try ...</h2> -->
     <!-- <p>If nothing happens, tap the button below.</p> -->
-    <!-- <button id="tapToOpen" >Open Blinkit</button> -->
+    <button id="tapToOpen" >Open Blinkit</button>
     <!-- <button id="tapToOpen">Open Zepto</button> -->
 
 
@@ -53,32 +53,32 @@
 
       window.onload = () => {
         if (isAndroid) {
-          // window.location.href = androidIntent;
-          window.location.href = webFallback;
+          window.location.href = androidIntent;
+          // window.location.href = webFallback;
           setTimeout(() => {
-            // window.location.href = androidStore;
-            window.location.href = webFallback;
+            window.location.href = androidStore;
+            // window.location.href = webFallback;
           }, 2000);
         } else if (isIOS) {
-          window.location.href = webFallback;
-          // Show button — required for Chrome/3rd party browsers
-          // document.getElementById("tapToOpen").style.display = "inline-block";
-          // document.getElementById("tapToOpen").onclick = () => {
-          //   // window.location.href = iosApp;
-          //   window.location.href = webFallback;
-          //   setTimeout(() => {
-          //     // window.location.href = iosStore;
-          //     window.location.href = webFallback;
-          //   }, 3000);
-          // };
+          // window.location.href = webFallback;
+          Show button — required for Chrome/3rd party browsers
+          document.getElementById("tapToOpen").style.display = "inline-block";
+          document.getElementById("tapToOpen").onclick = () => {
+            window.location.href = iosApp;
+            // window.location.href = webFallback;
+            setTimeout(() => {
+              window.location.href = iosStore;
+              // window.location.href = webFallback;
+            }, 3000);
+          };
 
           // Auto open only in Safari
           if (isSafari) {
-            // window.location = iosApp;
-            window.location.href = webFallback;
+            window.location = iosApp;
+            // window.location.href = webFallback;
             setTimeout(() => {
-              // window.location.href = iosStore;
-              window.location.href = webFallback;
+              window.location.href = iosStore;
+             // window.location.href = webFallback;
             }, 2000);
           }
         } else {
