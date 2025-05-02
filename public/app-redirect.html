@@ -44,19 +44,19 @@
 
       window.onload = () => {
         if (isAndroid) {
-          // window.location.href = androidIntent;
-          window.location.href = webFallback;
+          window.location.href = androidIntent;
+          // window.location.href = webFallback;
           setTimeout(() => {
-            // window.location.href = androidStore;
-            window.location.href = webFallback;
+            window.location.href = androidStore;
+            // window.location.href = webFallback;
           }, 2000);
         } else if (isIOS) {
 
-          // window.location.href = iosApp;
-          window.location.href = webFallback;
+          window.location.href = iosApp;
+          // window.location.href = webFallback;
           setTimeout(() => {
-            // window.location.href = iosStore;
-            window.location.href = webFallback;
+            window.location.href = iosStore;
+            // window.location.href = webFallback;
           }, 3000);
           // const button = document.getElementById("tapToOpen");
           // button.style.display = "inline-block";
