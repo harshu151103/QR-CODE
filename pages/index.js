@@ -8,7 +8,8 @@ export default function Home() {
   useEffect(() => {
     // QRCode.toDataURL('https://qr-code-lime-one.vercel.app/letstry')
       // QRCode.toDataURL('https://letstry-qr.com/letstry')
-      QRCode.toDataURL('https://www.letstryfoods.com/?srsltid=AfmBOor9Ee6fF3tAdVonprruJ6wc-vvsCanXloiYqeNJU3qT5gYW1Tjj')
+      // QRCode.toDataURL('https://www.letstryfoods.com/?srsltid=AfmBOor9Ee6fF3tAdVonprruJ6wc-vvsCanXloiYqeNJU3qT5gYW1Tjj')
+      QRCode.toDataURL('https://www.letstryfoods.com')
       .then(setQr)
       .catch(console.error);
   }, []);
